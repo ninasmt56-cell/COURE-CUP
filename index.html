@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUORE - Local Comfort, Thoughtfully Engineered</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cuoreTerracotta: '#C05638',
+                        cuoreTerracottaDark: '#8C351E',
+                        cuoreTerracottaLight: '#D1A880',
+                        cuorePink: '#FBCFE8',
+                        cuorePurple: '#E9D5FF',
+                        cuoreGreen: '#C8E6C9',
+                        cuoreCream: '#FFFBF7',
+                    },
+                    fontFamily: {
+                        fredoka: ['Fredoka', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        @keyframes floatFast {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(192, 86, 56, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(192, 86, 56, 0.4); }
+        }
+        .animate-float { animation: floatSlow 4s ease-in-out infinite; }
+        .animate-float-fast { animation: floatFast 2.5s ease-in-out infinite; }
+        .animate-glow { animation: pulseGlow 3s infinite; }
+
+        html { scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(12px); }
+        .card-interactive { transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .card-interactive:hover { transform: translateY(-10px) scale(1.02); }
+    </style>
+</head>
+<body class="bg-cuoreCream text-slate-800 font-poppins antialiased selection:bg-pink-200 selection:text-pink-800">
+
+    <!-- Interactive Navigation Header -->
+    <nav class="sticky top-0 z-50 glass-nav border-b border-orange-100/60 px-6 py-3 transition-all">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#hero" class="flex items-center gap-3 group">
+                <!-- Original CUORE Terracotta Logo -->
+                <div class="w-11 h-11 rounded-full bg-[#D1A880] p-0.5 shadow-md group-hover:rotate-6 transition transform">
+                    <div class="w-full h-full rounded-full border border-dashed border-[#B88A5F] bg-cuoreTerracotta text-white flex flex-col items-center justify-center p-1 text-center">
+                        <span class="font-fredoka text-[9px] tracking-widest leading-none">CUORE</span>
+                        <span class="text-[7px] my-0.5">🌾🥣🌾</span>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-fredoka text-xl text-cuoreTerracotta leading-none group-hover:text-cuoreTerracottaDark transition">CUORE</h1>
+                    <p class="text-[10px] text-slate-500 italic">Local comfort, thoughtfully engineered</p>
+                </div>
+            </a>
+            <div class="hidden md:flex gap-7 items-center font-semibold text-sm">
+                <a href="#hero" class="hover:text-cuoreTerracotta transition">Home</a>
+                <a href="#edu" class="hover:text-cuoreTerracotta transition">CVD Education</a>
+                <a href="#modules" class="hover:text-cuoreTerracotta transition">Products & Packaging</a>
+                <a href="#dashboard-mockup" class="hover:text-cuoreTerracotta transition">Conceptual Prototype</a>
+                <a href="#chatbot" class="bg-gradient-to-r from-pink-500 via-purple-500 to-emerald-500 text-white px-5 py-2.5 rounded-full shadow-lg shadow-purple-200 hover:opacity-95 hover:scale-105 transition transform flex items-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> AI Recommender
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-16 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="inline-flex items-center gap-2 bg-pink-100 text-pink-700 font-semibold text-xs px-4 py-1.5 rounded-full mb-4 border border-pink-200 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-pink-500 animate-ping"></span>
+                Local Food x AI Technology
+            </span>
+            <h1 class="font-fredoka text-4xl lg:text-5xl text-cuoreTerracotta font-bold mb-6 leading-tight">
+                Modular Local Botanical Porridge
+            </h1>
+            <p class="text-slate-600 mb-8 leading-relaxed text-base md:text-lg">
+                A savory instant porridge concept based on local biodiversity (Sorghum, Tempeh, & Porang) personalized via a Machine Learning risk-profiling system to support cardiovascular health.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#dashboard-mockup" class="bg-cuoreTerracotta text-white px-8 py-3.5 rounded-full font-bold shadow-xl shadow-orange-200 hover:bg-cuoreTerracottaDark hover:scale-105 transition transform flex items-center gap-2">
+                    <i class="fa-solid fa-desktop"></i> View Proposed UI Mockup
+                </a>
+                <a href="#modules" class="bg-white text-cuoreTerracotta border-2 border-cuoreTerracotta px-8 py-3.5 rounded-full font-bold hover:bg-orange-50 transition">
+                    Explore Products
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Terracotta Logo Display -->
+        <div class="flex justify-center">
+            <div class="w-72 h-72 rounded-full bg-[#D1A880] p-2 shadow-2xl flex items-center justify-center animate-float animate-glow">
+                <div class="w-full h-full rounded-full border-2 border-dashed border-[#B88A5F] p-2 flex items-center justify-center">
+                    <div class="w-full h-full rounded-full bg-cuoreTerracotta text-white flex flex-col items-center justify-center p-6 text-center shadow-inner relative">
+                        <span class="font-fredoka tracking-widest text-4xl font-bold">CUORE</span>
+                        <div class="flex items-center justify-center gap-2 my-2 text-amber-200 text-2xl">
+                            🌾 🥣 🌾
+                        </div>
+                        <span class="font-serif italic text-orange-100 text-xs leading-tight">
+                            Local comfort,<br>thoughtfully engineered
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardiovascular Disease (CVD) Education -->
+    <section id="edu" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="font-fredoka text-3xl text-cuoreTerracotta font-bold mb-2">Cardiovascular Risk Education</h2>
+            <p class="text-slate-500">Understanding dietary pathways, hypertension prevention, and metabolic wellness.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-3xl border-t-8 border-pink-400 bg-white shadow-sm card-interactive">
+                <div class="text-4xl mb-4">❤️</div>
+                <h3 class="font-bold text-xl mb-2 text-slate-800">Hypertension Burden</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Direct measurements indicate high adult hypertension prevalence, yet a large proportion remains undetected due to asymptomatic early stages.</p>
+            </div>
+            <div class="p-8 rounded-3xl border-t-8 border-emerald-400 bg-white shadow-sm card-interactive">
+                <div class="text-4xl mb-4">🧂</div>
+                <h3 class="font-bold text-xl mb-2 text-slate-800">Sodium Reduction</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Global adult sodium intake heavily exceeds recommended limits. Reformulating foods with natural umami flavors is a vital intervention.</p>
+            </div>
+            <div class="p-8 rounded-3xl border-t-8 border-purple-400 bg-white shadow-sm card-interactive">
+                <div class="text-4xl mb-4">🌾</div>
+                <h3 class="font-bold text-xl mb-2 text-slate-800">Fibre & Resistant Starch</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Viscous soluble fibre (Porang glucomannan) and resistant starch help modulate lipid absorption and maintain metabolic equilibrium.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products & Modules S, L, M (Pink, Green, Purple) -->
+    <section id="modules" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="font-fredoka text-3xl text-cuoreTerracotta font-bold mb-2">3 Modular Cup Variants</h2>
+            <p class="text-slate-500">Each serving combines a 35g Universal Base with a 20g Targeted Module</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- S-CUP (Pink) -->
+            <div class="rounded-3xl p-6 border-2 border-pink-300 bg-white shadow-md card-interactive flex flex-col justify-between">
+                <div>
+                    <div class="w-full h-48 rounded-2xl bg-gradient-to-b from-pink-100 to-pink-200 border border-pink-300 flex flex-col items-center justify-center p-4 relative mb-6 shadow-inner">
+                        <div class="absolute top-0 w-full h-5 bg-[#B88A5F] rounded-t-2xl border-b border-amber-900/20"></div>
+                        <span class="font-fredoka text-2xl font-bold text-slate-800 mt-3">S-CUP</span>
+                        <span class="text-4xl my-1 animate-float-fast">💖</span>
+                        <span class="text-[10px] text-pink-800 font-bold text-center bg-white/90 px-3 py-1 rounded-full border border-pink-300 shadow-sm">
+                            Sodium-conscious flavour architecture
+                        </span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-800 flex items-center justify-between">
+                        <span>S-CUP (Pink Variant)</span>
+                        <span class="w-3.5 h-3.5 rounded-full bg-pink-500"></span>
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-4">Flavor architecture using oyster mushroom & alliums to reduce added salt requirement.</p>
+                </div>
+                <div class="bg-pink-50 p-3 rounded-xl border border-pink-100">
+                    <span class="text-[11px] font-bold text-pink-700 block mb-1">MODULE COMPOSITION (20g):</span>
+                    <span class="text-xs text-slate-600 block">Oyster Mushroom 5g, Garlic 2g, Shallot 2g, Sorghum 5g, MOCAF 4g, Basil Seed 2g.</span>
+                </div>
+            </div>
+
+            <!-- M-CUP (Green) -->
+            <div class="rounded-3xl p-6 border-2 border-emerald-300 bg-white shadow-md card-interactive flex flex-col justify-between">
+                <div>
+                    <div class="w-full h-48 rounded-2xl bg-gradient-to-b from-emerald-100 to-emerald-200 border border-emerald-300 flex flex-col items-center justify-center p-4 relative mb-6 shadow-inner">
+                        <div class="absolute top-0 w-full h-5 bg-[#B88A5F] rounded-t-2xl border-b border-amber-900/20"></div>
+                        <span class="font-fredoka text-2xl font-bold text-slate-800 mt-3">M-CUP</span>
+                        <span class="text-4xl my-1 animate-float-fast">💚</span>
+                        <span class="text-[10px] text-emerald-800 font-bold text-center bg-white/90 px-3 py-1 rounded-full border border-emerald-300 shadow-sm">
+                            Resistant-starch and protein emphasis
+                        </span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-800 flex items-center justify-between">
+                        <span>M-CUP (Green Variant)</span>
+                        <span class="w-3.5 h-3.5 rounded-full bg-emerald-600"></span>
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-4">Focuses on resistant starch fractions and plant protein for sustained metabolic energy.</p>
+                </div>
+                <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-100">
+                    <span class="text-[11px] font-bold text-emerald-700 block mb-1">MODULE COMPOSITION (20g):</span>
+                    <span class="text-xs text-slate-600 block">Unripe Banana Flour 7g, MOCAF 4g, Tempeh Flour 4g, Sorghum 3g, Mung Bean 2g.</span>
+                </div>
+            </div>
+
+            <!-- L-CUP (Purple) -->
+            <div class="rounded-3xl p-6 border-2 border-purple-300 bg-white shadow-md card-interactive flex flex-col justify-between">
+                <div>
+                    <div class="w-full h-48 rounded-2xl bg-gradient-to-b from-purple-100 to-purple-200 border border-purple-300 flex flex-col items-center justify-center p-4 relative mb-6 shadow-inner">
+                        <div class="absolute top-0 w-full h-5 bg-[#B88A5F] rounded-t-2xl border-b border-amber-900/20"></div>
+                        <span class="font-fredoka text-2xl font-bold text-slate-800 mt-3">L-CUP</span>
+                        <span class="text-4xl my-1 animate-float-fast">💜</span>
+                        <span class="text-[10px] text-purple-800 font-bold text-center bg-white/90 px-3 py-1 rounded-full border border-purple-300 shadow-sm">
+                            Viscous soluble fibre & plant-bioactive
+                        </span>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-slate-800 flex items-center justify-between">
+                        <span>L-CUP (Purple Variant)</span>
+                        <span class="w-3.5 h-3.5 rounded-full bg-purple-600"></span>
+                    </h3>
+                    <p class="text-xs text-slate-500 mb-4">Rich in viscous soluble fibre (Porang Glucomannan & Basil Seed) for lipid priority.</p>
+                </div>
+                <div class="bg-purple-50 p-3 rounded-xl border border-purple-100">
+                    <span class="text-[11px] font-bold text-purple-700 block mb-1">MODULE COMPOSITION (20g):</span>
+                    <span class="text-xs text-slate-600 block">Porang Glucomannan 6g, Basil Seed 4g, Rice Bran 3g, Tempeh Flour 2g, Sorghum 3g, Unripe Banana Flour 2g.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: CUORE WEB INTERFACE MOCKUP (PROPOSED CONCEPTUAL PROTOTYPE) -->
+    <section id="dashboard-mockup" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-8">
+            <span class="bg-amber-100 text-amber-800 font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-wider">
+                Proposed Interface / Conceptual Prototype
+            </span>
+            <h2 class="font-fredoka text-3xl text-cuoreTerracotta font-bold mt-3 mb-2">CUORE AI Web Interface Mockup</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto text-sm">
+                Demonstrating the integrated user flow: from voluntary health data consent to AI-assisted dietary priority matching and transparent nutrition safety.
+            </p>
+        </div>
+
+        <!-- Mac-style Browser Frame Container -->
+        <div class="bg-slate-900 rounded-3xl p-3 shadow-2xl border border-slate-800">
+            <!-- Browser Header Bar -->
+            <div class="flex items-center justify-between px-4 py-2 border-b border-slate-800 text-slate-400 text-xs mb-3">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500 inline-block"></span>
+                    <span class="ml-4 font-mono text-[11px] text-slate-400">app.cuore-health.org/dashboard</span>
+                </div>
+                <span class="bg-slate-800 text-slate-300 px-3 py-0.5 rounded text-[10px]">CONCEPTUAL PROTOTYPE (NON-DIAGNOSTIC)</span>
+            </div>
+
+            <!-- Single-Page Mockup Layout Grid (3 Integrated Components) -->
+            <div class="bg-cuoreCream p-6 rounded-2xl text-slate-800 space-y-6">
+                
+                <!-- TOP ROW: Component 1 & Component 2 -->
+                <div class="grid lg:grid-cols-12 gap-6">
+                    
+                    <!-- COMPONENT 1: User Health & Preference Profile (5 Cols) -->
+                    <div class="lg:col-span-5 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-4 pb-2 border-b">
+                                <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                                    <i class="fa-solid fa-user-gear text-cuoreTerracotta"></i> 1. Health & Preference Profile
+                                </h3>
+                                <span class="text-[10px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded font-semibold">Tier-1 Input</span>
+                            </div>
+
+                            <!-- User Info Summary -->
+                            <div class="space-y-3 text-xs mb-4">
+                                <div class="p-3 bg-slate-50 rounded-xl flex justify-between items-center">
+                                    <span class="text-slate-500">User Profile:</span>
+                                    <span class="font-bold text-slate-700">Kathryn (Adult, 45 yrs)</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="p-2.5 bg-slate-50 rounded-lg">
+                                        <span class="text-slate-400 block text-[10px]">Mean BP:</span>
+                                        <span class="font-bold text-slate-800">138 / 88 mmHg</span>
+                                    </div>
+                                    <div class="p-2.5 bg-slate-50 rounded-lg">
+                                        <span class="text-slate-400 block text-[10px]">Primary FFQ Focus:</span>
+                                        <span class="font-bold text-pink-600">High Sodium / Salty</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Voluntary Data Consent & Safeguards -->
+                        <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-[11px] text-emerald-800 space-y-1">
+                            <div class="flex items-center gap-1.5 font-bold">
+                                <i class="fa-solid fa-shield-halved"></i> Data Privacy & Consent Verified
+                            </div>
+                            <p class="text-[10px] text-emerald-700 leading-tight">
+                                Consent provided under PDP Law (2022). Safety exclusions checked (No pregnancy, severe renal disease, or soy allergy).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- COMPONENT 2: AI-Based CUORE Recommendation (7 Cols) -->
+                    <div class="lg:col-span-7 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-4 pb-2 border-b">
+                                <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                                    <i class="fa-solid fa-microchip text-purple-600"></i> 2. AI-Based CUORE Recommendation
+                                </h3>
+                                <span class="text-[10px] bg-purple-50 text-purple-700 px-2.5 py-0.5 rounded font-bold">Module Classifier Output</span>
+                            </div>
+
+                            <!-- Serving Architecture Match Visualizer -->
+                            <div class="grid grid-cols-3 gap-3 text-center mb-4">
+                                <div class="p-3 bg-slate-50 rounded-xl border border-dashed border-slate-300">
+                                    <span class="text-[10px] text-slate-400 font-bold block">BASE PORTION</span>
+                                    <span class="font-bold text-xs text-slate-700 block mt-1">Universal Base</span>
+                                    <span class="text-xs text-emerald-600 font-extrabold">35g</span>
+                                </div>
+                                <div class="col-span-2 p-3 bg-pink-50 rounded-xl border border-pink-300 flex items-center justify-between px-4">
+                                    <div class="text-left">
+                                        <span class="text-[10px] text-pink-700 font-extrabold block">MATCHED MODULE</span>
+                                        <span class="font-fredoka text-base text-pink-900 font-bold">S-CUP (Sodium Conscious)</span>
+                                    </div>
+                                    <span class="text-lg font-bold text-pink-600 bg-white px-2.5 py-1 rounded-lg shadow-sm">20g</span>
+                                </div>
+                            </div>
+
+                            <!-- AI Recommendation Rationale Template -->
+                            <div class="p-3 bg-slate-50 rounded-xl text-xs text-slate-600 space-y-1">
+                                <span class="font-bold text-slate-800 block text-[11px]">Classifier Rationale:</span>
+                                <p class="text-[11px] leading-relaxed">
+                                    Target priority identified for <span class="font-semibold text-pink-700">Sodium-Conscious Flavour Architecture</span> based on reported blood pressure and packaged food frequency.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 text-[10px] text-slate-400 italic text-right">
+                            *Non-diagnostic decision support. Does not diagnose or treat disease.
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COMPONENT 3: Nutrition, Composition & Allergen Safety Information (Full Width) -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex justify-between items-center mb-4 pb-2 border-b">
+                        <h3 class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-leaf text-emerald-600"></i> 3. Nutrition, Composition & Safety Transparency
+                        </h3>
+                        <span class="text-[10px] bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded font-semibold">Serving Size: 55g (Base + Module S)</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        
+                        <!-- Estimated Nutritional Profile -->
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-slate-700 block">Secondary Nutrient Estimates (per serving):</span>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div class="p-2 bg-slate-50 rounded-lg"><span class="text-slate-500 block text-[10px]">Energy</span><span class="font-bold text-slate-800">≈203 kcal</span></div>
+                                <div class="p-2 bg-slate-50 rounded-lg"><span class="text-slate-500 block text-[10px]">Protein</span><span class="font-bold text-slate-800">8.1 g</span></div>
+                                <div class="p-2 bg-slate-50 rounded-lg"><span class="text-slate-500 block text-[10px]">Dietary Fibre</span><span class="font-bold text-slate-800">5.5 g</span></div>
+                                <div class="p-2 bg-slate-50 rounded-lg"><span class="text-slate-500 block text-[10px]">Intrinsic Sodium</span><span class="font-bold text-emerald-700">17 mg (&lt;1% WHO)</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Product Composition Summary -->
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-slate-700 block">Formulation Composition:</span>
+                            <p class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-xl border">
+                                <strong>Universal Base (35g):</strong> Sorghum (15g), Red Rice (8g), Tempeh Flour (5g), Mung Bean (4g), Oyster Mushroom (1g), Garlic (1g), Shallot (1g).<br>
+                                <strong>Module S (20g):</strong> Oyster Mushroom (5g), Garlic (2g), Shallot (2g), Sorghum (5g), MOCAF (4g), Basil Seed (2g).
+                            </p>
+                        </div>
+
+                        <!-- Allergen & Serving Instructions -->
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-slate-700 block">Safety Warnings & Preparation:</span>
+                            <div class="space-y-2 text-xs">
+                                <div class="p-2.5 bg-amber-50 text-amber-900 rounded-xl border border-amber-200 text-[11px]">
+                                    <strong>Allergen Warning:</strong> Contains Soy (Fermented Tempeh Flour).
+                                </div>
+                                <div class="p-2.5 bg-blue-50 text-blue-900 rounded-xl border border-blue-200 text-[11px]">
+                                    <strong>Preparation:</strong> Empty Base & Module sachets into cup bowl, add hot water, stir and hydrate.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Ingredient & Composition Details -->
+    <section id="composition" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="font-fredoka text-3xl text-cuoreTerracotta font-bold mb-2">Detailed Ingredient Composition</h2>
+            <p class="text-slate-500">Formulated with premium botanical inputs without any intentionally added sodium salt.</p>
+        </div>
+
+        <!-- Universal Base Info Box -->
+        <div class="bg-white border-2 border-dashed border-emerald-500 p-8 rounded-3xl shadow-sm mb-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-4 border-b">
+                <div>
+                    <span class="bg-emerald-600 text-white font-bold text-xs px-3.5 py-1.5 rounded-full">COMMON CORE</span>
+                    <h3 class="font-fredoka text-2xl text-slate-800 mt-2">Universal Base (35g per serving)</h3>
+                </div>
+                <span class="text-xs bg-emerald-50 text-emerald-700 font-bold px-3 py-1 rounded-lg border border-emerald-200">
+                    Included in All CUORE Servings
+                </span>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4 text-center">
+                <div class="p-3 bg-slate-50 rounded-xl border">
+                    <span class="text-2xl block mb-1">🌾</span>
+                    <span class="font-bold text-xs block text-slate-800">Sorghum</span>
+                    <span class="text-[11px] text-emerald-600 font-bold">15g</span>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border">
+                    <span class="text-2xl block mb-1">🍚</span>
+                    <span class="font-bold text-xs block text-slate-800">Red Rice</span>
+                    <span class="text-[11px] text-emerald-600 font-bold">8g</span>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border">
+                    <span class="text-2xl block mb-1">🧆</span>
+                    <span class="font-bold text-xs block text-slate-800">Tempeh Flour</span>
+                    <span class="text-[11px] text-emerald-600 font-bold">5g</span>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border">
+                    <span class="text-2xl block mb-1">🫘</span>
+                    <span class="font-bold text-xs block text-slate-800">Mung Bean</span>
+                    <span class="text-[11px] text-emerald-600 font-bold">4g</span>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border">
+                    <span class="text-2xl block mb-1">🍄</span>
+                    <span class="font-bold text-xs block text-slate-800">Oyster Mushroom</span>
+                    <span class="text-[11px] text-emerald-600 font-bold">1g</span>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border">
+                    <span class="text-2xl block mb-1">🧄</span>
+                    <span class="font-bold text-xs block text-slate-800">Garlic</span>
+                    <span class="text-[11px] text-emerald-600 font-bold">1g</span>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border">
+                    <span class="text-2xl block mb-1">🧅</span>
+                    <span class="font-bold text-xs block text-slate-800">Shallot</span>
+                    <span class="text-[11px] text-emerald-600 font-bold">1g</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botanical Sources Grid -->
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl border shadow-sm text-center card-interactive">
+                <div class="w-14 h-14 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">🌾</div>
+                <h4 class="font-bold text-slate-800 mb-1">Sorghum bicolor</h4>
+                <p class="text-xs text-slate-500">Gluten-free, drought-tolerant phenolic-rich cereal platform.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border shadow-sm text-center card-interactive">
+                <div class="w-14 h-14 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">🧆</div>
+                <h4 class="font-bold text-slate-800 mb-1">Fermented Tempeh</h4>
+                <p class="text-xs text-slate-500">Plant protein platform rich in bioactive peptides and isoflavone aglycones.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border shadow-sm text-center card-interactive">
+                <div class="w-14 h-14 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">🥔</div>
+                <h4 class="font-bold text-slate-800 mb-1">Porang (Glucomannan)</h4>
+                <p class="text-xs text-slate-500">Hydrophilic forest tuber supplying viscous dietary fibre for texture and lipid binding.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border shadow-sm text-center card-interactive">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">🍌</div>
+                <h4 class="font-bold text-slate-800 mb-1">Unripe Banana & Basil Seed</h4>
+                <p class="text-xs text-slate-500">Supplies Resistant Starch (RS-III) and natural seed hydrocolloid mucilage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive AI Chatbot Section -->
+    <section id="chatbot" class="py-16 px-6 max-w-4xl mx-auto">
+        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
+            <div class="bg-cuoreTerracotta p-6 text-white flex items-center gap-4">
+                <div class="text-3xl animate-float-fast">🤖</div>
+                <div>
+                    <h3 class="font-fredoka text-xl font-bold">CUORE AI Recommender Assistant</h3>
+                    <p class="text-xs text-orange-200">Non-diagnostic dietary priority profiling system</p>
+                </div>
+            </div>
+
+            <div id="chatLogs" class="p-6 h-72 overflow-y-auto bg-slate-50 space-y-4">
+                <div class="flex justify-start">
+                    <div class="max-w-[85%] p-4 rounded-2xl rounded-bl-none text-sm bg-purple-100 text-purple-900 border border-purple-200 shadow-sm leading-relaxed">
+                        Hello! I am your CUORE virtual assistant. Let's determine the ideal modular porridge priority for your daily dietary needs!
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 bg-white border-t border-slate-100 space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1">Blood Pressure (Systolic mmHg):</label>
+                        <input id="inputSbp" type="number" value="135" class="w-full border rounded-xl p-2.5 text-sm outline-none focus:border-cuoreTerracotta">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1">Primary Dietary Pattern:</label>
+                        <select id="selectDiet" class="w-full border rounded-xl p-2.5 text-sm outline-none focus:border-cuoreTerracotta">
+                            <option value="salt">Frequent Salty / Packaged Foods</option>
+                            <option value="fat">Frequent Fried / High-Fat Foods</option>
+                            <option value="carb">Low Fibre / High Sugary Foods</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="handleAIAnalyze()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-100 transition transform active:scale-98 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Analyze AI Module Recommendation
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white text-center py-6 text-xs mt-12">
+        &copy; 2026 CUORE Project - Diponegoro University. Prepared for 5th International Youth Conference (IYC) 2026.
+    </footer>
+
+    <!-- Native JavaScript Chatbot Engine -->
+    <script>
+        function handleAIAnalyze() {
+            const sbp = parseInt(document.getElementById('inputSbp').value) || 120;
+            const diet = document.getElementById('selectDiet').value;
+            const chatLogs = document.getElementById('chatLogs');
+
+            const dietText = diet === 'salt' ? 'High Sodium Foods' : diet === 'fat' ? 'High Fat Foods' : 'Low Fibre / Sugary';
+            const userMsgHtml = `
+                <div class="flex justify-end">
+                    <div class="max-w-[85%] p-4 rounded-2xl rounded-br-none text-sm bg-pink-500 text-white shadow-md">
+                        SBP: ${sbp} mmHg | Pattern: ${dietText}
+                    </div>
+                </div>
+            `;
+            chatLogs.insertAdjacentHTML('beforeend', userMsgHtml);
+
+            let botReply = '';
+            if (sbp >= 130 || diet === 'salt') {
+                botReply = "🎯 <b>AI RECOMMENDATION: S-CUP (Module S - Pink)</b><br><br><b>Focus:</b> Sodium-conscious flavour architecture. Utilizes oyster mushroom and allium umami compounds to offset additional salt necessity.";
+            } else if (diet === 'fat') {
+                botReply = "🎯 <b>AI RECOMMENDATION: L-CUP (Module L - Purple)</b><br><br><b>Focus:</b> Viscous soluble fibre & plant-bioactives. Formulated with Porang glucomannan (6g) & basil seed (4g) for lipid priority.";
+            } else {
+                botReply = "🎯 <b>AI RECOMMENDATION: M-CUP (Module M - Green)</b><br><br><b>Focus:</b> Resistant-starch and protein emphasis. Enhanced with unripe banana flour (7g) & fermented tempeh protein for metabolic priority.";
+            }
+
+            setTimeout(() => {
+                const botMsgHtml = `
+                    <div class="flex justify-start">
+                        <div class="max-w-[85%] p-4 rounded-2xl rounded-bl-none text-sm bg-purple-100 text-purple-900 border border-purple-200 shadow-sm leading-relaxed">
+                            ${botReply}
+                        </div>
+                    </div>
+                `;
+                chatLogs.insertAdjacentHTML('beforeend', botMsgHtml);
+                chatLogs.scrollTop = chatLogs.scrollHeight;
+            }, 300);
+        }
+    </script>
+</body>
+</html>
